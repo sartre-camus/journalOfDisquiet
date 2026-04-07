@@ -1,50 +1,28 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Journal of Disquiet</title>
-<meta name="generator" content="Org Mode" />
-<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Wayland Shift - Journal of Disquiet</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div id="content" class="content">
-<h1 class="title">Journal of Disquiet</h1>
+    <div id="container">
+        <header>
+            <h1><a href="index.html">JOURNAL OF DISQUIET</a></h1>
+        </header>
 
-<div id="outline-container-org00d528b" class="outline-2">
-<h2 id="org00d528b">Daily entry</h2>
-<div class="outline-text-2" id="text-org00d528b">
-<p>
-Migrated the LibrebootX200s system to a fresh installation of Guix
-running with i3-wm and sway-wm. This is to see how sway-wm works on
-Wayland. The video rendering seemed smoother than Mate or EXWM. This
-window manager and compositor seems lightweight. Graphically, it seems
-to do a decent job. I still am wondering which directories from the
-backup should I import or should I leave them as it is. Is it worth
-regaining those files from the backup anyway? I think I would resort
-to building different packages and delete old ones. I will do it on a
-per-package and per-use basis. I&rsquo;m not going to hoard everything on
-this system and make it slow down. Just keep the ones that matter and
-use them as needed. No needed for packages which are barely used or
-doesn&rsquo;t meet my current requirements. Only the essential!
-</p>
+        <main>
+            <h2 class="title">The Wayland Shift</h2>
+            <div class="category">technology, minimalism</div>
+            <p>I’ve stripped the Libreboot X200s down to its bones and built it back up with Guix and Sway-wm. Wayland is the new law in town, and it runs smoother than the old Mate syndicate. I’m sifting through the backups, wondering which ghosts are worth bringing back. Most of it is just digital hoard—I’d rather start fresh, installing only what’s essential. I’m tired of the clutter. Getting used to the new navigation feels like learning a new city’s back alleys. I still haven’t cut the SSH keys for the repository access; I’m not sure I’m ready to open that door yet.</p>
+            <p>Getting accustomed to the new layouts and navigations in sway-wm. Not sure how I intend to leverage this new window manager for my work. I still have generate ssh keys for git repository access. I’m wondering whether it’s needed to that yet!</p>
+        </main>
 
-<p>
-Getting accustomed to the new layouts and navigations in sway-wm. Not
-sure how I intend to leverage this new window manager for my work. I
-still have generate ssh keys for git repository access. I&rsquo;m wondering
-whether it&rsquo;s needed to that yet!
-</p>
-</div>
-</div>
-</div>
-<div id="postamble" class="status">
-<a href="J20230222.html">Previous</a>
-<a href="J20230313.html">Next</a>
-<p class="date">Date: 2023-03-11 (Saturday)</p>
-<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.5.5)</p>
-</div>
+        <footer>
+            <p>BACK TO THE <a href="index.html">VOID</a>. OR SEEK <a href="javascript:void(0)" onclick="goToRandomEntry()">RANDOM</a>.</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
