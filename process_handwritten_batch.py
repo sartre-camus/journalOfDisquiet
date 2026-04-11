@@ -29,7 +29,7 @@ Output a JSON array of entries. Each entry must have:
 """
 
 model = genai.GenerativeModel(
-    model_name="models/gemini-2.0-flash",
+    model_name="models/gemini-flash-latest",
     generation_config=generation_config,
     system_instruction=system_instruction
 )
@@ -44,7 +44,10 @@ else:
     processed_files = []
 
 # Exclude the ones I just processed manually
-processed_files.extend(['20250414_094506.jpg', '20250414_094525.jpg', '20250414_094536.jpg', '20250414_094552.jpg', '20250414_094614.jpg'])
+to_ignore = ['20250414_094506.jpg', '20250414_094525.jpg', '20250414_094536.jpg', '20250414_094552.jpg', '20250414_094614.jpg']
+for f_ignore in to_ignore:
+    if f_ignore not in processed_files:
+        processed_files.append(f_ignore)
 
 files_to_process = [f for f in os.listdir(handwritten_dir) if f.endswith(('.jpg', '.pdf')) and f not in processed_files]
 
