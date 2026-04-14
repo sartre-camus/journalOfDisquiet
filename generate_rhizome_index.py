@@ -33,64 +33,6 @@ def generate_rhizome_index():
             if shared:
                 connections.append((categories[i], categories[j]))
 
-    # CSS for the Rhizome
-    rhizome_css = """
-    body {
-        overflow: hidden; /* Constellation is the whole view */
-    }
-    #rhizome-canvas {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        z-index: -1;
-        background: #0d0d0d;
-    }
-    .constellation-container {
-        position: relative;
-        width: 100vw;
-        height: 100vh;
-        perspective: 1200px;
-    }
-    .thought-node {
-        position: absolute;
-        cursor: pointer;
-        text-transform: uppercase;
-        letter-spacing: 5px;
-        color: var(--text-color);
-        transition: color 0.5s, transform 0.5s, filter 0.5s;
-        white-space: nowrap;
-        user-select: none;
-        font-family: var(--font-mono);
-    }
-    .thought-node:hover {
-        color: var(--accent-color);
-        filter: blur(0px) !important;
-        opacity: 1 !important;
-        z-index: 100;
-    }
-    .node-label {
-        pointer-events: none;
-    }
-    #ui-layer {
-        position: fixed;
-        bottom: 2rem;
-        width: 100%;
-        text-align: center;
-        pointer-events: none;
-    }
-    #ui-layer a {
-        pointer-events: auto;
-        opacity: 0.3;
-        font-size: 0.7rem;
-        letter-spacing: 10px;
-    }
-    """
-
-    with open('style.css', 'a') as s:
-        s.write(rhizome_css)
-
     # Prepare data for JS
     # We'll pass the categories and their connections to a JS engine that handles the drift and lines
     nodes = []
@@ -110,7 +52,7 @@ def generate_rhizome_index():
     <title>Journal of Disquiet</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="index-page">
     <canvas id="rhizome-canvas"></canvas>
     <div class="constellation-container" id="constellation"></div>
     

@@ -26,55 +26,6 @@ def generate_category_heatmap():
         except:
             pass
 
-    # CSS for Category Cloud
-    category_css = """
-    .category-cloud {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1.5rem;
-        justify-content: center;
-        margin-top: 4rem;
-        padding: 0 1rem;
-    }
-    .category-item {
-        transition: all 0.4s ease;
-        cursor: pointer;
-        text-decoration: none;
-        display: inline-block;
-        color: var(--text-color);
-        opacity: 0.6;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-    }
-    .category-item:hover {
-        color: var(--accent-color);
-        opacity: 1;
-        transform: scale(1.1);
-    }
-    .entry-list {
-        display: none;
-        margin-top: 1rem;
-        padding-left: 1rem;
-        border-left: 1px solid var(--accent-color);
-        width: 100%;
-        text-align: left;
-    }
-    .category-wrapper {
-        text-align: center;
-        margin-bottom: 1rem;
-    }
-    .category-wrapper.active .entry-list {
-        display: block;
-    }
-    .category-wrapper.active .category-item {
-        color: var(--accent-color);
-        opacity: 1;
-    }
-    """
-
-    with open('style.css', 'a') as s:
-        s.write(category_css)
-
     # Generate HTML
     html_parts = []
     html_parts.append('<div class="category-cloud">')
@@ -102,25 +53,6 @@ def generate_category_heatmap():
         html_parts.append('</ul></div></div>')
         
     html_parts.append('</div>')
-
-    # JavaScript for toggling
-    js_toggle = """
-function toggleCategory(catId) {
-    const wrappers = document.querySelectorAll('.category-wrapper');
-    const target = document.getElementById('wrap-' + catId);
-    
-    const isActive = target.classList.contains('active');
-    
-    wrappers.forEach(w => w.classList.remove('active'));
-    
-    if (!isActive) {
-        target.classList.add('active');
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-}
-    """
-    with open('script.js', 'a') as js:
-        js.write(js_toggle)
 
     # Update index.html
     with open('index.html', 'r') as f:

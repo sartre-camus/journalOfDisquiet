@@ -24,88 +24,6 @@ def generate_ethereal_index():
         except:
             pass
 
-    # CSS for Ethereal Cloud
-    ethereal_css = """
-    .ethereal-cloud {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 2rem;
-        justify-content: center;
-        align-items: center;
-        margin-top: 6rem;
-        padding: 0 2rem;
-        perspective: 1000px;
-    }
-    .memory-fragment {
-        transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
-        cursor: pointer;
-        text-decoration: none;
-        display: inline-block;
-        color: var(--text-color);
-        text-transform: uppercase;
-        letter-spacing: 4px;
-        position: relative;
-        filter: blur(1px);
-    }
-    .memory-fragment:hover {
-        color: var(--accent-color);
-        filter: blur(0px);
-        transform: translateZ(20px) scale(1.1);
-        opacity: 1 !important;
-    }
-    .fragment-list {
-        display: none;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: rgba(13, 13, 13, 0.95);
-        padding: 3rem;
-        border: 1px solid #222;
-        max-height: 70vh;
-        overflow-y: auto;
-        z-index: 1000;
-        width: 80%;
-        max-width: 500px;
-        box-shadow: 0 0 100px rgba(0,0,0,1);
-    }
-    .fragment-list ul {
-        list-style: none;
-        padding: 0;
-    }
-    .fragment-list li {
-        margin-bottom: 1rem;
-        border-bottom: 1px solid #1a1a1a;
-        padding-bottom: 0.5rem;
-    }
-    .fragment-list a {
-        font-size: 0.8rem;
-        color: var(--text-color);
-    }
-    .overlay {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0,0,0,0.8);
-        z-index: 999;
-        backdrop-filter: blur(5px);
-    }
-    .close-overlay {
-        position: absolute;
-        top: 1rem;
-        right: 1rem;
-        color: var(--accent-color);
-        cursor: pointer;
-        font-size: 1.5rem;
-    }
-    """
-
-    with open('style.css', 'a') as s:
-        s.write(ethereal_css)
-
     # Generate HTML
     html_parts = []
     html_parts.append('<div class="ethereal-cloud">')
@@ -142,21 +60,6 @@ def generate_ethereal_index():
         
     html_parts.append('</div>')
     html_parts.append('<div class="overlay" id="memory-overlay" onclick="closeMemory()"></div>')
-
-    # JavaScript for Modal logic
-    js_ethereal = """
-function openMemory(catId) {
-    document.getElementById('memory-overlay').style.display = 'block';
-    document.getElementById('mem-' + catId).style.display = 'block';
-}
-
-function closeMemory() {
-    document.getElementById('memory-overlay').style.display = 'none';
-    document.querySelectorAll('.fragment-list').forEach(l => l.style.display = 'none');
-}
-    """
-    with open('script.js', 'a') as js:
-        js.write(js_ethereal)
 
     # Update index.html
     with open('index.html', 'r') as f:
