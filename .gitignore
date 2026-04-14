@@ -1,1 +1,20 @@
 .idea/
+
+# Binary files
+*.bin
+*.exe
+*.dll
+*.so
+*.dylib
+*.o
+*.obj
+
+# PDF and Images
+*.pdf
+*.jpg
+*.jpeg
+
+# Scripts
+*.py
+*.sh
+*.js
